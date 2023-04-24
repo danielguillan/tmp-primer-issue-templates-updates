@@ -1,0 +1,54 @@
+name: "Request a Primer Design review"
+description: Get your project reviewed to identify Primer patterns and accessibility dependencies
+title: "[Primer Design review] featureName"
+labels: ["design", "needs triage", "needs pattern discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Start here
+        1. Replace featureName in the title with the name of your feature or project.
+        2. Please be sure to include specific feedback you're looking for or questions you need answered. We want to make sure that we address your questions and concerns within the 20 minute time slot provided. If further review is needed, we can always follow-up at a separate office hour.
+
+  - type: dropdown
+    attributes:
+      label: Primer or Primer Brand?
+      options:
+        - Primer
+        - Primer Brand
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Team working on this feature
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: When do you need completed feedback?
+      description: Office hours are scheduled a maximum of two weeks ahead of time. Please leave time for any questions or response delays due to time zones.
+      value: "Month Day, Year"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Design description
+      description: Help set the context for us. What's the design diff between what exists and what you're changing? Be sure to include a textual design description along with screenshots and/or videos.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Feedback you're looking for
+      description: Let us know what you'd like us to focus on during the review. Specify any technical limitations, if any.
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Primer Review attendance
+      description: Live virtual attendance is strongly encouraged if you're located in AMER/EMEA.
+      options:
+        - Async
+        - Live appearance
+        - Someone else will attend live
+    validations:
+      required: true
