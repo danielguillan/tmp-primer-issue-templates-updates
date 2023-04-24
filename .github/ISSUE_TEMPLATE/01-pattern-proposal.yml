@@ -1,14 +1,14 @@
-name: "Request a Primer Design review"
-description: Get your project reviewed to identify Primer patterns and accessibility dependencies
-title: "[Primer Design review] featureName"
-labels: ["design", "needs triage", "needs pattern discussion"]
+name: "Propose a Primer pattern or component"
+description: Suggest a new pattern or component, or an update to an existing one
+title: "[Proposal] featureName"
+labels: ["design", "proposal", "needs triage"]
 body:
   - type: markdown
     attributes:
       value: |
         ## Start here
         1. Replace featureName in the title with the name of your feature or project.
-        2. Please be sure to include specific feedback you're looking for or questions you need answered. We want to make sure that we address your questions and concerns within the 20 minute time slot provided. If further review is needed, we can always follow-up at a separate office hour.
+        2. Before you submit this issue, make sure you've read the [Handling new patterns documentation](https://primer.style/design/guides/contribute/handling-new-patterns).
 
   - type: dropdown
     attributes:
@@ -18,37 +18,52 @@ body:
         - Primer Brand
     validations:
       required: true
+  - type: dropdown
+    attributes:
+      label: This proposal is concerning a
+      description:
+      options:
+        - New pattern idea
+        - Nomination of a shared component for upstreaming
+        - Modification to an existing Primer pattern
+    validations:
+      required: true
   - type: input
     attributes:
       label: Team working on this feature
     validations:
       required: true
-  - type: input
+  - type: textarea
     attributes:
-      label: When do you need completed feedback?
-      description: Office hours are scheduled a maximum of two weeks ahead of time. Please leave time for any questions or response delays due to time zones.
-      value: "Month Day, Year"
+      label: Describe the pattern or pattern updates you are proposing
+      description: Please add a brief description of the pattern or the updates needed
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Design description
-      description: Help set the context for us. What's the design diff between what exists and what you're changing? Be sure to include a textual design description along with screenshots and/or videos.
-    validations:
-      required: true
+      label: Where will the pattern be used, or is already used?
+      description: In what use cases will the pattern be useful, or, in case of existing patterns, where is it used now? If known, indicate if the pattern will be needed across different implementations and why/why not. Include links and screenshots, if possible.
   - type: textarea
     attributes:
-      label: Feedback you're looking for
-      description: Let us know what you'd like us to focus on during the review. Specify any technical limitations, if any.
-    validations:
-      required: true
-  - type: dropdown
+      label: Why is this pattern needed?
+      description: Please add a brief description of why you believe this pattern or component should exist in Primer. For example, to support a new feature, to improve the developer experience, to improve the user experience in a certain way.
+  - type: textarea
     attributes:
-      label: Primer Review attendance
-      description: Live virtual attendance is strongly encouraged if you're located in AMER/EMEA.
-      options:
-        - Async
-        - Live appearance
-        - Someone else will attend live
-    validations:
-      required: true
+      label: Are there sketches, wireframes, mockups, or prototypes?
+      description: Include links to anything that can help visualise and understand the proposal. If the files are very big and complex, please link to the relevant views, and/or add a description of what we should focus on.
+  - type: textarea
+    attributes:
+      label: Is this pattern needed for a launch event or other deadline? Is this pattern critical to the success of a feature ship?
+      description: Please include details of how this pattern is relevant to your success, and whether it's connected to a launch event. Include deadlines, team OKRs, planning, whatever helps us to prioritize this work.
+  - type: textarea
+    attributes:
+      label: Do you have design and/or engineering resources available to work on this? Or are you requesting the Primer team to take on the full scope of work?
+      description: Is there a team available (now or in the near future) to work on the design and implementation of this pattern. If so, please provide details about who is/will be available.
+  - type: textarea
+    attributes:
+      label: What other ways (if any) might you be able to achieve your goals if we can't complete this work in your timeframe?
+      description: What's your plan B?
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Include any dependencies, and links with relevant information like, research, specs, Figma links, code prototypes, discussion threads, related issues, previous work, etc.
